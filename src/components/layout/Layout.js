@@ -23,7 +23,7 @@ class MyLayout extends React.Component {
               overflowY: 'scroll'
             }}
           >
-            <div>Content</div>
+            {this.props.children}
           </Content>
           <Footer
             style={{
