@@ -1,14 +1,21 @@
-import React from 'react'
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, message } from 'antd'
 import './Login.less'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Success:', values)
-  }
-
+  const history = useHistory()
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo)
+  }
+
+  const login = (values) => {
+    const { username, password } = values
+    if (username === 'admin' && password === 'sluggard') {
+      message.info('登录成功')
+      history.push('/index')
+    } else {
+      message.error('用户名或密码错误')
+    }
   }
   const labelCol = { span: 5 }
   return (
@@ -16,7 +23,7 @@ const Login = () => {
       <Form
         labelAlign="left"
         className="login-form"
-        onFinish={onFinish}
+        onFinish={login}
         onFinishFailed={onFinishFailed}
       >
         <div className="login-form-title">管理后台</div>

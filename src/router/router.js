@@ -1,12 +1,13 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import Login from '../views/login/Login'
-const customHistory = require('history').createBrowserHistory
+import MainLayout from '../components/layout/Layout'
 
 const Router = () => (
-  <HashRouter history={customHistory}>
+  <HashRouter>
     <Switch>
-      {/* <Route exact path="/" component={Index} /> */}
+      <Route path="/index" component={MainLayout} />
+      <Route exact path="/" redirect="/index" component={MainLayout} />
       <Route path="/login" component={Login} />
     </Switch>
   </HashRouter>
