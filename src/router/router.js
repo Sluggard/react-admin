@@ -1,8 +1,8 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import Login from '../views/login/Login'
-import MainLayout from '../components/layout/Layout'
-import Menu from '../views/sys/menu/Menu'
+import Login from '@/views/login/Login'
+import MainLayout from '@/components/layout/Layout'
+import Menu from '@/views/sys/menu/Menu'
 
 const Router = () => (
   <HashRouter>
